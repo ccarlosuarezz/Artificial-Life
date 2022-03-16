@@ -274,5 +274,7 @@ function setAgentsAge() {
     for (let i = 0; i < agentList.length; i++) {
         agentList[i].age++;
         agentList[i].setPhase();
+        agentList[i].setSize(agentList[i].phase);
+        agentList[i].speed = agentList[i].generateSpeed(agentList[i].phase);
     }
 }
