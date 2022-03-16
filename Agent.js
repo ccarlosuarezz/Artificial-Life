@@ -102,7 +102,7 @@ class Agent {
         let getFood = false;
         let distanBetweenFood = 0;
         for (let i = 0; i < foodList.length; i++) {
-            distanBetweenFood = Math.sqrt((((foodList[i].coordX + FOOD_SIZE) - (this.coordX + this.size))**2) + (((foodList[i].coordY + FOOD_SIZE) - (this.coordY + this.size))**2));
+            distanBetweenFood = Math.sqrt((((foodList[i].coordX + FOOD_SIZE) - (this.coordX + this.size))**2) +(((foodList[i].coordY + FOOD_SIZE) - (this.coordY + this.size))**2));
             if (distanBetweenFood - (this.size + FOOD_SIZE) <= 0) {
                 getFood = true;
             }
@@ -112,6 +112,5 @@ class Agent {
                 break;
             }
         }
-        //TO DO -->Determinar cual elemento esta mas cercano y cambiar el angulo de direccion hacia el
     }
 }

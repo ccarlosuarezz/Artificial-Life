@@ -34,18 +34,6 @@ function executeSimulation() {
     }
 }
 
-function pauseSimulation() {
-    if (isSimulation) {
-        isPause = true;
-    }
-}
-
-function replaySimulation() {
-    if (isPause) {
-        isPause = false;
-    }
-}
-
 function createAgents(numberOfAgents) {
     for (let i = 0; i < numberOfAgents; i++) {
         agentList.push(new Agent(randomGenerator(0,1), randomGenerator(0,100), randomGenerator(30, 100), randomGenerator(0, canvas.width), randomGenerator(0, canvas.height)));
@@ -54,6 +42,16 @@ function createAgents(numberOfAgents) {
 
 function randomGenerator(min, max) {
     return Math.round(Math.random() * (max - min)) + min;
+}
+
+function drawAgents() {
+    let actualAgent;
+    for (let i = 0; i < agentList.length; i++) {
+        actualAgent = agentList[i];
+        agentDie(actualAgent);
+        drawAgent(actualAgent);
+        reduceEnergy(actualAgent);
+    }
 }
 
 function simulateLife(simulationYears) {
@@ -91,21 +89,23 @@ function simulateLife(simulationYears) {
     }, 300);
 }
 
+function pauseSimulation() {
+    if (isSimulation) {
+        isPause = true;
+    }
+}
+
+function replaySimulation() {
+    if (isPause) {
+        isPause = false;
+    }
+}
+
 function verifyDeaths() {
     for (let i = 0; i < agentList.length; i++) {
         if (agentList[i].phase == 4) {
             agentList.splice(i, 1);
         }
-    }
-}
-
-function drawAgents() {
-    let actualAgent;
-    for (let i = 0; i < agentList.length; i++) {
-        actualAgent = agentList[i];
-        agentDie(actualAgent);
-        drawAgent(actualAgent);
-        reduceEnergy(actualAgent);
     }
 }
 
