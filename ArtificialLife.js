@@ -174,7 +174,7 @@ function drawAgent(agent) {
 
 function createFood() {
     let random = randomGenerator(0, 100);
-    if (random < 30 && foodList.length < agentList.length*2) {
+    if (random < 30) {
         foodList.push(new Food(randomGenerator(15, 30), randomGenerator(0, canvas.width), randomGenerator(0, canvas.height)));
     }
 }
