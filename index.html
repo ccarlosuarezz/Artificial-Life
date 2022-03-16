@@ -4,12 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/interaction.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <title>Vida Artificial</title>
 </head>
 <body>
-    <canvas id="canvas" width="500" height="500"></canvas>
+    <h1> Vida artificial</h1>
+    <div class="form_container">
+        <div class="form">
+            <input type="number" name="agents_quantity_value" id="agent_quantity" autocomplete="off" required/>
+            <label for="agents_quantity_value" class="label_input">
+                <span class="content_input"><b>Cantidad de agentes</b></span>
+            </label>
+        </div>
+        <div class="form">
+            <input type="number" name="years_value" id="input_years" autocomplete="off" required/>
+            <label for="years_value" class="label_input">
+                <span class="content_input"><b>Años a simular</b></span>
+            </label>
+        </div>
+        <button id="exec_button" class="exec_button"><b>Ejecutar</b></button>
+        <button id="pause_button" class="pause_button"><b>Pausar</b></button>
+        <button id="replay_button" class="replay_button"><b>Reanudar</b></button>
+    </div>
+    <div class="contentCanvas">
+        <canvas id="canvas" width="700" height="500"></canvas>
+        <div class="info">
+            <p>Año actual</p>
+            <p id="year">0</p>
+        </div>
+    </div>
+
+    <script src="Constants.js"></script>
     <script src="Agent.js"></script>
+    <script src="Food.js"></script>
     <script src="ArtificialLife.js"></script>
 </body>
 </html>
