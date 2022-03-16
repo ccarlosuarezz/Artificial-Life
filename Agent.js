@@ -65,10 +65,10 @@ class Agent {
                 size = CHILD_SIZE;
                 break;
             case 1:
-                size = ADULT_SIZE;
+                size = YOUNG_SIZE;
                 break;
             case 2:
-                size = YOUNG_SIZE;
+                size = ADULT_SIZE;
                 break;
             case 3:
                 size = OLD_SIZE;
